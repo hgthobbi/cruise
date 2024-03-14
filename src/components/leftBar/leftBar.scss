@@ -1,42 +1,70 @@
+@import "../../style.scss";
+
 .leftBar{
-    .container{
-        padding: 20px;
-        .menu{
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            .user{
-                display: flex;
-                align-items: center;
-                gap: 10px;
+    @include themify($themes){
+        flex: 2;
+        position: sticky;
+        top: 70px;
+        height: calc(100vh - 70px);
+        overflow:scroll;
+        background-color: themed("bg");
+        color: themed("textColor");
+        font-family: sans-serif;
 
-                img{
-                    width: 30px;
-                    height: 30px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                }
-                span{
-                    
-                }
-            }
-            .item{
-                display: flex;
-                align-items: center;
-                gap: 10px;
+        //comment this in if you want to remove the scroll bar for the left nav panel
+        // &::-webkit-scrollbar{
+        //     display: none;
+        // }
 
-                img{
-                    width: 30px;
-                    
-                }
-                span{
-
-                }
-            }
+        .container{
+            padding: 20px;
             
-        }
+            .menu{
+                
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                .user{
+                    // border-radius: 15px;
+                    // -webkit-box-shadow: 0px -1px 9px -1px rgba(0,0,0,0.71);
+                    // -moz-box-shadow: 0px -1px 9px -1px rgba(0,0,0,0.71);
+                    // box-shadow: 0px -1px 9px -1px rgba(0,0,0,0.71);
+                    display: flex;
+                    align-items: center;
+                    height: 50px;
 
+                    img{
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        padding: 10px;
+                    }
+                    span{
+                        font-size: 20px;
+                    }
+                }
+                .item{
+                    // border-radius: 15px;
+                    // -webkit-box-shadow: 0px -1px 9px -1px rgba(0,0,0,0.71);
+                    // -moz-box-shadow: 0px -1px 9px -1px rgba(0,0,0,0.71);
+                    // box-shadow: 0px -1px 9px -1px rgba(0,0,0,0.71);
+                    display: flex;
+                    align-items: center;
+                    height: 50px;
+
+                    img{
+                        width: 30px;
+                        padding: 10px;
+                    }
+                    span{
+                        font-size: 20px;
+                    }
+                }
+                
+            }
+
+        }
     }
-    
 
 }

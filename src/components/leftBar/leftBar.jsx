@@ -44,6 +44,8 @@ const LeftBar = ()=> {
                         <img src={Memories} alt=""/>
                         <span>Memories</span>
                     </div>
+
+                    
                 </div>
             </div>
         </div>

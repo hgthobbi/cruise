@@ -1,0 +1,43 @@
+$themes:(
+    light:(
+        textColor: #000,
+        bg: white,
+        logo: #8B2635,
+        bgSoft: #D2D4C8,
+        textColorSoft: #555,
+        border: lightgrey
+    ),
+    dark:(
+        textColor: whitesmoke,
+        bg: #222,
+        logo: #8B2635,
+        bgSoft: #333,
+        textColorSoft: lightgrey,
+        border: #444
+    ),
+);
+
+@mixin themify($themes) {
+    @each $theme, $map in $themes{
+        // this will change the classname in main div in app.js based on the light/dark mode flag
+        .theme-#{$theme} & {
+            $theme-map: () !global;
+            @each $key, $submap in $map{
+                $value: map-get(map-get($themes, $theme), "#{$key}");
+                $theme-map: map-merge(
+                    $theme-map,
+                    (
+                        $key: $value,
+                    )
+                )!global;
+            }
+            @content;
+            $theme-map: null !global;
+        }
+    }
+}
+
+@function themed($key){
+    @return map-get($theme-map, $key)
+}
+
