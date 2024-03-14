@@ -15,7 +15,7 @@ Welcome to Cruise - the ultimate social media platform designed exclusively for 
 
 1. Clone the repository: `git clone https://github.com/yourusername/cruise.git`
 2. Install dependencies: `npm install`
-3. Start the application: `npm start`
+3. Start the application: `npm run dev`
 
 ## Usage
 
